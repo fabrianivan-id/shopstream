@@ -1,1 +1,2 @@
 rootProject.name = 'shopstream'
+include 'common-lib', 'api-gateway', 'product-service', 'order-service', 'inventory-service', 'catalog-service', 'stream-processor'

@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shopstream
+    username: postgres
+    password: postgres
+  jdbc:
+    template:
+      fetch-size: 1000

@@ -1,0 +1,8 @@
+plugins { id 'org.springframework.boot' }
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.kafka:spring-kafka:3.2.4'
+    implementation 'org.apache.kafka:kafka-streams:3.8.0'
+    implementation project(':common-lib')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
