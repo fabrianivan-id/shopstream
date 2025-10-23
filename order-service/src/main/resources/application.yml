@@ -1,8 +1,17 @@
 server:
   port: 8082
 spring:
+  application.name: order-service
   kafka:
     bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+springdoc:
+  api-docs.enabled: true
+  swagger-ui.path: /swagger
+management:
+  endpoints.web.exposure.include: health,info,prometheus
+app:
+  topics:
+    ordersCreated: orders.created

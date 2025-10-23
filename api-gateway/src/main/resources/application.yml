@@ -1,18 +1,27 @@
 server:
   port: 8080
+
 spring:
+  application:
+    name: api-gateway
   cloud:
     gateway:
       routes:
-        - id: product
+        - id: product-service
           uri: http://localhost:8081
           predicates: [ Path=/products/** ]
-        - id: order
+        - id: order-service
           uri: http://localhost:8082
           predicates: [ Path=/orders/** ]
-        - id: inventory
+        - id: inventory-service
           uri: http://localhost:8083
           predicates: [ Path=/inventory/** ]
-        - id: catalog
+        - id: catalog-service
           uri: http://localhost:8084
           predicates: [ Path=/catalog/** ]
+      default-filters:
+        - PreserveHostHeader
+
+management:
+  endpoints:
+    web.exposure.include: health,info,prometheus

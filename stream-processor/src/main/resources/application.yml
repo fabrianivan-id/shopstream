@@ -1,7 +1,10 @@
 spring:
+  application.name: stream-processor
   kafka:
     bootstrap-servers: localhost:9092
-    streams:
-      application-id: shopstream-processor
-server:
-  port: 8090
+management:
+  endpoints.web.exposure.include: health,info,prometheus
+app:
+  topics:
+    ordersCreated: orders.created
+    ordersEnriched: orders.enriched

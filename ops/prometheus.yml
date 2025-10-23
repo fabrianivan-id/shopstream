@@ -1,0 +1,10 @@
+global: { scrape_interval: 10s }
+scrape_configs:
+  - job_name: 'shopstream'
+    static_configs:
+      - targets:
+        - 'api-gateway:8080'
+        - 'product-service:8081'
+        - 'order-service:8082'
+        - 'inventory-service:8083'
+        - 'catalog-service:8084'

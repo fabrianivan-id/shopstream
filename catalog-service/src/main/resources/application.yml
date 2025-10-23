@@ -1,5 +1,11 @@
 server:
   port: 8084
 spring:
+  application.name: catalog-service
   elasticsearch:
     uris: http://localhost:9200
+springdoc:
+  api-docs.enabled: true
+  swagger-ui.path: /swagger
+management:
+  endpoints.web.exposure.include: health,info,prometheus

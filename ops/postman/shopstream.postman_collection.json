@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "ShopStream",
+    "_postman_id": "shopstream",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Product Top",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/products/top?perCategory=2"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"customerId\":\"c1\",\"sku\":\"SKU-001\",\"qty\":2}"
+        }
+      }
+    },
+    {
+      "name": "Inventory Get",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/inventory/SKU-001"
+      }
+    },
+    {
+      "name": "Inventory Set",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/inventory/SKU-001?value=10"
+      }
+    },
+    {
+      "name": "Catalog Index",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/catalog/index",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sku\":\"SKU-002\",\"name\":\"Mechanical Keyboard\",\"category\":\"accessories\",\"price\":45.00}"
+        }
+      }
+    },
+    {
+      "name": "Catalog Search",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/catalog/search?q=keyboard"
+      }
+    }
+  ]
+}
